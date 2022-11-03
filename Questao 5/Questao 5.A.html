@@ -1,0 +1,65 @@
+<!DOCTYPE <html>
+
+<head>
+  <center>
+    <br /><br />
+    <h1>Exercício da Bandeira</h1>
+    <h2>focado em usar o html canvas para criar a bandeira do Brasil</h2>
+    <br /><br />
+  </center></head
+><canvas width="600" height="400"></canvas>
+
+<body>
+  <script>
+    var tela = document.querySelector('canvas');
+    var formas = tela.getContext('2d');
+
+    // Questao 5.1
+    // Quadrado
+    formas.beginPath();
+    formas.rect(5, 5, 240, 140);
+    formas.strokeStyle = '#FF0017';
+    formas.lineWidth = 3;
+    formas.stroke();
+
+    // Triângulo
+    formas.fillStyle = '#08FF00';
+    formas.beginPath();
+    formas.moveTo(80, 110);
+    formas.lineTo(160, 110);
+    formas.lineTo(120, 40);
+    formas.fill();
+
+    //Questao 5.2
+    //Retangulo
+    formas.beginPath();
+    formas.rect(380, 50, 80, 50);
+    formas.strokeStyle = '#FF0017';
+    formas.fill();
+    //Circulo
+    formas.beginPath();
+    formas.strokeStyle = '#0059FF';
+    formas.arc(420, 80, 70, 0, 2 * Math.PI);
+    formas.stroke();
+
+    //Questao 5.3
+    //triangulo 1
+    formas.beginPath();
+    formas.moveTo(80, 110);
+    formas.lineTo(160, 110);
+    formas.lineTo(120, 40);
+    formas.closePath();
+    formas.stroke();
+
+    //triangulo 2
+    formas.beginPath();
+    formas.moveTo(120, 110);
+    formas.lineTo(200, 110);
+    formas.lineTo(160, 40);
+    formas.closePath();
+    formas.stroke();
+  </script>
+
+  <body />
+  <html />
+</body>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matriz de Circulos</title>
+    <style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas width="600" height="600"></canvas>
+
+    <script>
+      let canvas = document.querySelector('canvas');
+      let matrizTriangulo = canvas.getContext('2d');
+
+      for (let i = 0; i < 6; i++) {
+        for (let j = 0; j < 3; j++) {
+          // Quadrado
+          matrizTriangulo.beginPath();
+          matrizTriangulo.rect(5 + i * 80, 5 + j * 80, 80, 80);
+          matrizTriangulo.strokeStyle = '#FF0017';
+          matrizTriangulo.lineWidth = 3;
+          matrizTriangulo.stroke();
+
+          // Triângulo
+          matrizTriangulo.fillStyle = '#08FF00';
+          matrizTriangulo.beginPath();
+          matrizTriangulo.moveTo(40 + i * 80, 20 + j * 80);
+          matrizTriangulo.lineTo(20 + i * 80, 70 + j * 80);
+          matrizTriangulo.lineTo(70 + i * 80, 70 + j * 80);
+          matrizTriangulo.fill();
+        }
+      }
+    </script>
+  </body>
+</html>

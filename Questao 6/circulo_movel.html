@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Directions</title>
+    <style>
+      canvas {
+        border: 1px solid rgb(235, 239, 3);
+      }
+    </style>
+  </head>
+  <body>
+    <canvas width="600" height="600"></canvas>
+
+    <script>
+      let canvas = document.querySelector('canvas');
+      let circulo = canvas.getContext('2d');
+
+      function drawRect(x, y) {
+        circulo.beginPath();
+        circulo.arc(x, y, 70, 0, 2 * Math.PI);
+        circulo.fill();
+      }
+
+      let dirX;
+      let dirY;
+      let posX;
+      let posY;
+      let velocity;
+      let time;
+
+      function Start() {
+        (dirX = dirY = 0), ((posX = 300), (posY = 300));
+        velocity = 50;
+        time = setInterval(Update, 100);
+        document.addEventListener('keydown', KeyDown);
+        document.addEventListener('keyup', KeyUp);
+      }
+
+      function KeyDown() {
+        let tecla = event.key;
+        if (tecla === 'ArrowRight') dirX = 1;
+        else if (tecla === 'ArrowLeft') dirX = -1;
+        else if (tecla === 'ArrowUp') dirY = -1;
+        else if (tecla === 'ArrowDown') dirY = 1;
+      }
+
+      function KeyUp() {
+        let tecla = event.key;
+        if (tecla === 'ArrowRight') dirX = 0;
+        else if (tecla === 'ArrowLeft') dirX = 0;
+        else if (tecla === 'ArrowUp') dirY = 0;
+        else if (tecla === 'ArrowDown') dirY = 0;
+      }
+      function Update() {
+        circulo.clearRect(0, 0, canvas.width, canvas.height);
+        posX += dirX * velocity;
+        posY += dirY * velocity;
+        drawRect(posX, posY);
+      }
+
+      window.addEventListener('load', Start);
+    </script>
+  </body>
+</html>
