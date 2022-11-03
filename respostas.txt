@@ -1,0 +1,13 @@
+1 – Com suas palavras descreva o que é a DOM e qual sua relação com o HTML?
+O dom funciona como um interface de programacao que permite acessar documentos escritos em HTML ou XML
+Com a existencia do dom, se torna possivel para as linguagens terem acesso ao conteudo de paginas na web, por meio dele as altera-las, em torno da necessidade. 
+
+2 – O que é o canvas HTML? 
+é um elemento da linguagem HTML que permite que sejam criados graficos por meio da linguagem javacript. Podendo ser desde  formas geometricas a imagens.
+
+3 – Quais as linguagens e tecnologias comumente envolvidas no desenvolvimento de produtos baseados em
+canvas html?
+São O JavaScript(JS) e O Cascading Style Sheets(CSS)
+
+4 – Explique para que serve o código “document.getElementById()”
+É uma funcao javacript, que retorna o elemento de um documento HMTL como objeto por meio de seu id no documento HTML, caso esse id nao exista ele retorna nulo.  A funcao getElementById é a forma mais comum de utilizar o DOM para fazer checagens ou editar um documento html. 
